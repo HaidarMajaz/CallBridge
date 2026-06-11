@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="24dp">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Master Mode" android:textSize="24sp" android:textStyle="bold" android:layout_marginBottom="24dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Phone number to call" android:layout_marginBottom="12dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPhoneNumber" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:inputType="phone"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDial" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Dial SIM Call" android:layout_marginBottom="24dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Signaling server URL (optional)" android:layout_marginBottom="12dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etServerUrl" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnStartBridge" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Start Bridge" android:layout_marginBottom="24dp"/>
+    <TextView android:id="@+id/tvRoomCode" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="" android:textSize="20sp" android:textStyle="bold"
+        android:gravity="center" android:layout_gravity="center"/>
+</LinearLayout>
