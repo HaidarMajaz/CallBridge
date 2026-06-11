@@ -23,7 +23,9 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: |
+          sed -i 's/DEFAULT_JVM_OPTS=.*$/DEFAULT_JVM_OPTS=""/' gradlew
+          ./gradlew assembleDebug --stacktrace
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
