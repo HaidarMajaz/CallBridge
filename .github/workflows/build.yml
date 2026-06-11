@@ -19,17 +19,14 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Gradle
+      - name: Install Gradle 8.5
         run: |
-          wget -q https://services.gradle.org/distributions/gradle-8.1.1-bin.zip
-          unzip -q gradle-8.1.1-bin.zip -d $HOME
-          export PATH=$HOME/gradle-8.1.1/bin:$PATH
-          gradle --version
+          wget -q https://services.gradle.org/distributions/gradle-8.5-bin.zip
+          unzip -q gradle-8.5-bin.zip -d $HOME
+          echo "$HOME/gradle-8.5/bin" >> $GITHUB_PATH
 
       - name: Build Debug APK
-        run: |
-          export PATH=$HOME/gradle-8.1.1/bin:$PATH
-          gradle assembleDebug --stacktrace --no-daemon
+        run: gradle assembleDebug --stacktrace --no-daemon
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
